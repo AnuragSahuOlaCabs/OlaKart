@@ -25,13 +25,13 @@ public class Controller {
 	public List<User> getBookbyId(@PathVariable("id") int id) throws Exception {
 		return userService.getUser(id);
 	}
-	@PostMapping("/putuser")
-	public User addBook(@RequestBody User book) throws Exception {
-		User u = this.userService.putBook(book);
+	@PostMapping("/registeruser")
+	public User addBook(@RequestBody User user) throws Exception {
+		User u = this.userService.putUser(user);
 		return u;
 	}
 	@PostMapping("/login")
 	public List<User> checkLogin(@RequestBody LoginCredentials loginCre) throws Exception {
-		return this.userService.chkUser(loginCre);	
+		return this.userService.chkCustomer(loginCre);	
 	}
 }

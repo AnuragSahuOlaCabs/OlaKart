@@ -53,7 +53,7 @@ public class User {
 		FirstName = firstName;
 	}
 	public String getEmail_id() {
-		return email_id;
+		return email_id.trim();
 	}
 	public void setEmail_id(String email_id) {
 		this.email_id = email_id;

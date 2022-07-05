@@ -1,6 +1,8 @@
 package com.example.entities;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,15 +27,28 @@ public class UserService {
 		return user;
 	}
 	
-	public User putBook(User user) throws Exception {
+	public User putUser(User user) throws Exception {
+		// Check if email id is correct in format
+		// Check if the email already exists in DB
+		
 		list.add(user);
 		return user;
 	}
 	
-	public List<User> chkUser(LoginCredentials loginChk) throws Exception {
-		System.out.println(loginChk.getEmail_id());
-		System.out.println(loginChk.getPassword());
-		List<User> user = list.stream().filter(b->b.getEmail_id()==loginChk.getEmail_id()).collect(Collectors.toList());
-		return user;
+	public List<User> chkCustomer(LoginCredentials loginChk) throws Exception {
+
+		ArrayList<User> user = new ArrayList<User>();
+
+        for (User i : list) {
+        	System.out.print(i.getEmail_id().equals(loginChk.getEmail_id()));
+            if(i.getEmail_id().equals(loginChk.getEmail_id()) && i.getPassword_en().equals(loginChk.getPassword())) {
+            	user.add(i);
+            }
+        }
+        
+        return user;
+		
+//		System.out.println(user.size());
+//		return user;
 	}
 }

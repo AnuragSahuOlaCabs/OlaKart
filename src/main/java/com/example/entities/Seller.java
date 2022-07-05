@@ -7,10 +7,16 @@ public class Seller {
 	private String store_name;
 	private String seller_name;
 	private String password;
-	private int phone_number;
+	private String phone_number;
 	private String store_address;
+	
+	
+	public Seller() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public Seller(int store_id, String email_id, String store_name, String seller_name, String password,
-			int phone_number, String store_address) {
+			String phone_number, String store_address) {
 		super();
 		this.store_id = store_id;
 		this.email_id = email_id;
@@ -50,10 +56,10 @@ public class Seller {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public int getPhone_number() {
+	public String getPhone_number() {
 		return phone_number;
 	}
-	public void setPhone_number(int phone_number) {
+	public void setPhone_number(String phone_number) {
 		this.phone_number = phone_number;
 	}
 	public String getStore_address() {

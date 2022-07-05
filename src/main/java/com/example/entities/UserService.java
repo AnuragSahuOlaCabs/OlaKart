@@ -11,11 +11,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserService {
 	private static List<User> list = new ArrayList<>();
+	private static List<Seller> listSeller = new ArrayList<>();
+
 	
 	static {
 		list.add(new User(1, "Anurag", "anurag.sahu@olacabs.com", "here", "8602043478", "male", "Koramangala"));
 		list.add(new User(2, "Abhishek", "Abhishek.sahu@olacabs.com", "here", "8602043478", "male", "Koramangala"));
 		list.add(new User(3, "Akash", "Akash.sahu@olacabs.com", "here", "8602043478", "male", "Koramangala"));
+	}
+	
+	static {
+		listSeller.add(new Seller(123, "taraFancyStore1@gmail.com", "Tara Fancy Store", "Tara", "12345","9530767450","1-p-6 Banglore"));
+		listSeller.add(new Seller(43, "foodAdda@gmail.com", "Food Adda", "Rajesh", "12345","9530767456","1-p-7 Banglore"));
 	}
 	
 	public List<User> getAllUsers(){
@@ -51,4 +58,42 @@ public class UserService {
 //		System.out.println(user.size());
 //		return user;
 	}
+	
+	//Seller
+	public List<Seller> getAllSeller(){
+		return listSeller;
+	}
+	
+//	public List<Seller> getSeller(int id) throws Exception{
+//		List<Seller> Seller = list.stream().filter(b->b.getUser_id()==id).collect(Collectors.toList());
+//		return user;
+//	}
+	
+	
+	
+	public Seller putSeller(Seller seller) throws Exception {
+		// Check if email id is correct in format
+		// Check if the email already exists in DB
+		
+		listSeller.add(seller);
+		return seller;
+	}
+	
+	public List<Seller> chkSeller(LoginCredentials loginChk) throws Exception {
+
+		ArrayList<Seller> seller = new ArrayList<Seller>();
+
+        for (Seller i : listSeller) {
+        	System.out.print(i.getEmail_id().equals(loginChk.getEmail_id()));
+            if(i.getEmail_id().equals(loginChk.getEmail_id()) && i.getPassword().equals(loginChk.getPassword())) {
+            	seller.add(i);
+            }
+        }
+        
+        return seller;
+		
+//		System.out.println(user.size());
+//		return user;
+	}
+	
 }

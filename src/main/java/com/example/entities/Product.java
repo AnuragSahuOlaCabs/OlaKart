@@ -13,6 +13,14 @@ public class Product {
 	private float ratings;
 	private int no_of_ratings;
 	
+	
+	
+	
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Product(int product_id, String product_name, String product_description, int price, int store_id,
 			int category_id, int sub_category_id, int brand_id, float ratings, int no_of_ratings) {
 		super();

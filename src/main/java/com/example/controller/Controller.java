@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entities.LoginCredentials;
+import com.example.entities.Seller;
 import com.example.entities.User;
 import com.example.entities.UserService;
 
@@ -33,5 +34,22 @@ public class Controller {
 	@PostMapping("/login")
 	public List<User> checkLogin(@RequestBody LoginCredentials loginCre) throws Exception {
 		return this.userService.chkCustomer(loginCre);	
+	}
+	
+	// Seller Registration
+	@GetMapping("/sellers")
+	public List<Seller> getSeller(){
+		return userService.getAllSeller();
+	}
+	@PostMapping("/registerseller")
+	public Seller addSeller(@RequestBody Seller seller) throws Exception {
+		Seller u = this.userService.putSeller(seller);
+		return u;
+	}
+	
+	//Seller Login
+	@PostMapping("/loginseller")
+	public List<Seller> checkLoginSeler(@RequestBody LoginCredentials loginCre) throws Exception {
+		return this.userService.chkSeller(loginCre);	
 	}
 }

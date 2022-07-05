@@ -4,6 +4,14 @@ public class Category {
 	private String category_name;
 	private int category_id;
 	private int sub_category_id;
+	
+	
+	
+	
+	public Category() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public Category(String category_name, int category_id, int sub_category_id) {
 		super();
 		this.category_name = category_name;

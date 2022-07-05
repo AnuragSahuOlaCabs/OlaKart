@@ -4,6 +4,13 @@ public class OrderProductMapping {
 	
 	private int order_id;
 	private int product_id;
+	
+	
+	
+	public OrderProductMapping() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public OrderProductMapping(int order_id, int product_id) {
 		super();
 		this.order_id = order_id;

@@ -4,6 +4,13 @@ public class SubCategory {
 	
 	private int sub_category_id;
 	private String sub_category_name;
+	
+	
+	
+	public SubCategory() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public SubCategory(int sub_category_id, String sub_category_name) {
 		super();
 		this.sub_category_id = sub_category_id;

@@ -11,6 +11,14 @@ public class Order {
 	private String time;
 	private String mode;
 	
+	
+	
+	public Order() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public Order(int order_id, int user_id, int store_id, int transaction_id, int quantity, int price, String time, String mode) {
 		super();
 		this.order_id = order_id;

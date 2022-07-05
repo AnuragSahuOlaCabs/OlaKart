@@ -64,16 +64,9 @@ public class UserService {
 		return listSeller;
 	}
 	
-//	public List<Seller> getSeller(int id) throws Exception{
-//		List<Seller> Seller = list.stream().filter(b->b.getUser_id()==id).collect(Collectors.toList());
-//		return user;
-//	}
-	
 	
 	
 	public Seller putSeller(Seller seller) throws Exception {
-		// Check if email id is correct in format
-		// Check if the email already exists in DB
 		
 		listSeller.add(seller);
 		return seller;
@@ -91,9 +84,13 @@ public class UserService {
         }
         
         return seller;
+	}
+	
+	public CountCart getObjectsInCartCount(User user) throws Exception {
+		// Calculate the number of Object in cart Via SQL
 		
-//		System.out.println(user.size());
-//		return user;
+		CountCart c = new CountCart(3);
+		return c;
 	}
 	
 }

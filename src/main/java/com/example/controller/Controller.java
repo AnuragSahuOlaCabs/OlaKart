@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.entities.CountCart;
 import com.example.entities.LoginCredentials;
 import com.example.entities.Seller;
 import com.example.entities.User;
@@ -52,4 +53,10 @@ public class Controller {
 	public List<Seller> checkLoginSeler(@RequestBody LoginCredentials loginCre) throws Exception {
 		return this.userService.chkSeller(loginCre);	
 	}
+	// count the number of objects in cart
+	@PostMapping("/count_of_cart")
+	public CountCart getNumberOfObjectsInCart(@RequestBody User user) throws Exception {
+		return this.userService.getObjectsInCartCount(user);
+	}
+	
 }

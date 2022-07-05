@@ -1,0 +1,56 @@
+.bt{
+    background-color: rgb(110, 110, 210);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    cursor: pointer;
+    opacity: 1;
+    
+    /* position: relative;
+    top: 200px;
+    left: 650px; */
+
+    transition-duration: 300ms;
+    /* for delaying the transition */
+
+    width: 10%;
+    /* every button uses 20% of the page width */
+}
+
+.bt:hover{
+    background-color: rgb(252, 133, 234);
+    color: black;
+
+    box-shadow: 10px 10px 10px;
+
+    transform: translate(0px, -10px);
+    
+}
+.btk{
+    background-color: rgb(110, 110, 210);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    cursor: pointer;
+    opacity: 1;
+    
+    /* position: relative;
+    top: 200px;
+    left: 650px; */
+
+    transition-duration: 300ms;
+    /* for delaying the transition */
+
+    width: 10%;
+    /* every button uses 20% of the page width */
+}
+
+.btk:hover{
+    background-color: rgb(243, 69, 217);
+    color: black;
+
+    box-shadow: 10px 10px 10px;
+
+    transform: translate(0px, -10px);
+    
+}

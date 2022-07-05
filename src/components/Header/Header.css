@@ -1,0 +1,77 @@
+.hdbt{
+    background-color: rgb(100, 188, 239);
+    color: rgb(0, 0, 0);
+    border: none;
+    /* padding: 23px 20px; */
+    cursor: pointer;
+    opacity: 1;
+    padding-top: 15px;
+    padding-bottom: 7px;
+
+    transition-duration: 300ms;
+
+    width: 7%;
+    border-radius: 5%;
+}
+.hdbt:hover{
+    background-color: rgb(250, 255, 230);
+    color: black;
+    
+}
+.userbt{
+    background-color: rgb(100, 188, 239);
+    color: rgb(0, 0, 0);
+    border: none;
+    /* padding: 30px 20px; */
+    cursor: pointer;
+    opacity: 1;
+
+    transition-duration: 300ms;
+
+    width: 7%;
+    padding-top: 10px;
+    padding-bottom: 2px;
+    border-radius: 5%;
+}
+.userbt:hover{
+    background-color: rgb(250, 255, 230);
+    color: black;
+    
+}
+.lgobt{
+    background-color: rgb(100, 188, 239);
+    color: rgb(0, 0, 0);
+    border: none;
+    /* padding: 20px 40px; */
+
+    width: 10%;
+}
+.nmbt{
+    background-color: rgb(100, 188, 239);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 0px 20px;
+    text-align: left;
+    /* max-height: 50px; */
+    /* padding-top: 20px; */
+    width: 76%;
+}
+
+.logo{
+    max-height: 70px;
+    max-width: 70px;
+    
+}
+.head{
+    background-color: rgb(100, 188, 239);
+}
+.cart{
+    max-height: 50px;
+    max-width: 50px;
+    
+}
+.user{
+    max-height: 50px;
+    max-width: 50px;
+    
+}

@@ -48,7 +48,7 @@ public class UserService {
 
         for (User i : list) {
         	System.out.print(i.getEmail_id().equals(loginChk.getEmail_id()));
-            if(i.getEmail_id().equals(loginChk.getEmail_id()) && i.getPassword_en().equals(loginChk.getPassword())) {
+            if(i.getEmail_id().equals(loginChk.getEmail_id()) && i.getPassword_en().equals(loginChk.getPassword_en())) {
             	user.add(i);
             }
         }
@@ -78,7 +78,7 @@ public class UserService {
 
         for (Seller i : listSeller) {
         	System.out.print(i.getEmail_id().equals(loginChk.getEmail_id()));
-            if(i.getEmail_id().equals(loginChk.getEmail_id()) && i.getPassword().equals(loginChk.getPassword())) {
+            if(i.getEmail_id().equals(loginChk.getEmail_id()) && i.getPassword().equals(loginChk.getPassword_en())) {
             	seller.add(i);
             }
         }

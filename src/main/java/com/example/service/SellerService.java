@@ -19,29 +19,29 @@ public class SellerService {
 		return sellers;
 	}
 	
-//	public User getUserById(int id) {
-//		return eCommRepo.findById(id).get();
-//	}
-//	
-//	public User saveOrUpdate(User user) {
-//		eCommRepo.save(user);
-//		return user;
-//	}
-//	
-//	public List<User> chkCustomer(LoginCredentials loginChk) {
-//		List<User> list = new ArrayList<User>();
-//		List<User> users = new ArrayList<User>();
-//		eCommRepo.findAll().forEach(user1 -> list.add(user1));
-//		for (User i : list) {
-//			// Check for Passwords also
-//            if(i.getEmail_id().equals(loginChk.getEmail_id())) {
-//            	users.add(i);
-//            }
-//        }
-//        return users;
-//	}
-//	
-//	public void update(User user, int userId) {
-//		eCommRepo.save(user);
-//	}
+	public Seller getSellerById(int id) {
+		return sellerRepo.findById(id).get();
+	}
+	
+	public Seller saveOrUpdate(Seller seller) {
+		sellerRepo.save(seller);
+		return seller;
+	}
+	
+	public List<Seller> chkSeller(LoginCredentials loginChk) {
+		List<Seller> list = new ArrayList<Seller>();
+		List<Seller> sellers = new ArrayList<Seller>();
+		sellerRepo.findAll().forEach(seller1 -> list.add(seller1));
+		for (Seller i : list) {
+			// Check for Passwords also
+            if(i.getEmail_id().equals(loginChk.getEmail_id())) {
+            	sellers.add(i);
+            }
+        }
+        return sellers;
+	}
+	
+	public void update(Seller seller, int sellerId) {
+		sellerRepo.save(seller);
+	}
 }

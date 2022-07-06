@@ -30,7 +30,7 @@ public class UserController {
 		User u = this.eCommService.saveOrUpdate(user);
 		return u;
 	}
-	@PostMapping("/login")
+	@PostMapping("/login_user")
 	public List<User> checkLogin(@RequestBody LoginCredentials loginCre) throws Exception {
 		return this.eCommService.chkCustomer(loginCre);	
 	}

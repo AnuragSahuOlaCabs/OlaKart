@@ -1,7 +1,11 @@
 package com.example.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Seller {
-	
+	@Id
 	private int store_id;
 	private String email_id;
 	private String store_name;

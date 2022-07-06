@@ -1,5 +1,7 @@
 package com.example.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 public class Order {
 	private int order_id;

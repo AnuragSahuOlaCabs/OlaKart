@@ -1,5 +1,6 @@
 package com.example.entities;
 
+//@Entity
 public class CountCart {
 
 	private int count;

@@ -1,5 +1,8 @@
 package com.example.entities;
 
+import javax.persistence.Entity;
+
+
 public class OrderProductMapping {
 	
 	private int order_id;

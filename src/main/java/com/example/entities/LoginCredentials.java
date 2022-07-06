@@ -1,5 +1,6 @@
 package com.example.entities;
 
+
 public class LoginCredentials {
 	private String email_id;
 	private String password;

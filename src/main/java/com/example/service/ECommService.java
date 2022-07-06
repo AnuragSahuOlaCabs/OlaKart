@@ -7,12 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.entities.*;
 
-import com.example.dao.Repository;
+import com.example.dao.UserRepository;
 
 @Service
 public class ECommService {
 	@Autowired
-	Repository eCommRepo;
+	UserRepository eCommRepo;
 	public List<User> getAllUsers(){
 		List<User> users = new ArrayList<User>();
 		eCommRepo.findAll().forEach(user -> users.add(user));

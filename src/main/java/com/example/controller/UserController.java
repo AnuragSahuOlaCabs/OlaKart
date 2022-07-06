@@ -9,17 +9,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.entities.CountCart;
-import com.example.entities.LoginCredentials;
-import com.example.entities.Seller;
-import com.example.entities.User;
-import com.example.entities.UserService;
+import com.example.entities.*;
 import com.example.service.ECommService;
 
 @RestController
-public class Controller {
+public class UserController {
 	@Autowired
 	private ECommService eCommService;
+	
 	@GetMapping("/users")
 	public List<User> getUsers(){
 		return eCommService.getAllUsers();
@@ -37,7 +34,7 @@ public class Controller {
 	public List<User> checkLogin(@RequestBody LoginCredentials loginCre) throws Exception {
 		return this.eCommService.chkCustomer(loginCre);	
 	}
-	
+		
 	// Seller Registration
 //	@GetMapping("/sellers")
 //	public List<Seller> getSeller(){

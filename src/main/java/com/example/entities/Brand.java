@@ -1,7 +1,12 @@
 package com.example.entities;
 
-public class Brand {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class Brand {
+	
+	@Id
 	private int brand_id;
 	private String brand_name;
 	

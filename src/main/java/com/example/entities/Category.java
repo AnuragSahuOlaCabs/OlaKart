@@ -1,6 +1,12 @@
 package com.example.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Category {
+	
+	@Id
 	private String category_name;
 	private int category_id;
 	private int sub_category_id;

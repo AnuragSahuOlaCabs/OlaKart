@@ -16,6 +16,7 @@ public class Product {
 	private int brand_id;
 	private float ratings;
 	private int no_of_ratings;
+	
 	public int getProduct_id() {
 		return product_id;
 	}

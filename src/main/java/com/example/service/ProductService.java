@@ -2,6 +2,7 @@ package com.example.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,4 +36,17 @@ public class ProductService {
 		return productRepo.getrandomproducts();
 //		return products;
 	}
+	
+	public Product getProductById(int pid){
+		return productRepo.getProductById(pid).get(0);
+	}
+//	public List<Product> getProductsInCart(int id) {
+//		List<Integer> prod_ids = cartRepo.getProductsInCart(id);
+//		List<Product> prod_details = new ArrayList<Product>();
+//		for (int i=0;i<prod_ids.size();i++) {
+//			Optional<Product> prod = productRepo.findById(prod_ids.get(i));
+//			prod_details.add(prod.get());
+//		}
+//		return prod_details;
+//		}
 }

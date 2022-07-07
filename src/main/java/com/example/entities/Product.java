@@ -7,16 +7,40 @@ import javax.persistence.Id;
 public class Product {
 	@Id
 	private int product_id;
-	private String product_img_url;
 	private String product_name;
 	private String product_description;
 	private int price;
 	private int store_id;
 	private int category_id;
 	private int brand_id;
-	private float ratings;
+	private float rating;
 	private int no_of_ratings;
-	
+	private String product_img_url;
+	@Override
+	public String toString() {
+		return "Product [product_id=" + product_id + ", product_img_url=" + product_img_url + ", product_name="
+				+ product_name + ", product_description=" + product_description + ", price=" + price + ", store_id="
+				+ store_id + ", category_id=" + category_id + ", brand_id=" + brand_id + ", rating=" + rating
+				+ ", no_of_ratings=" + no_of_ratings + "]";
+	}
+	public Product(int product_id, String product_img_url, String product_name, String product_description, int price,
+			int store_id, int category_id, int brand_id, float rating, int no_of_ratings) {
+		super();
+		this.product_id = product_id;
+		this.product_img_url = product_img_url;
+		this.product_name = product_name;
+		this.product_description = product_description;
+		this.price = price;
+		this.store_id = store_id;
+		this.category_id = category_id;
+		this.brand_id = brand_id;
+		this.rating = rating;
+		this.no_of_ratings = no_of_ratings;
+	}
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public int getProduct_id() {
 		return product_id;
 	}
@@ -59,18 +83,17 @@ public class Product {
 	public void setCategory_id(int category_id) {
 		this.category_id = category_id;
 	}
-	
 	public int getBrand_id() {
 		return brand_id;
 	}
 	public void setBrand_id(int brand_id) {
 		this.brand_id = brand_id;
 	}
-	public float getRatings() {
-		return ratings;
+	public float getRating() {
+		return rating;
 	}
-	public void setRatings(float ratings) {
-		this.ratings = ratings;
+	public void setRating(float rating) {
+		this.rating = rating;
 	}
 	public int getNo_of_ratings() {
 		return no_of_ratings;
@@ -79,31 +102,7 @@ public class Product {
 		this.no_of_ratings = no_of_ratings;
 	}
 	
-	public Product(int product_id, String product_img_url, String product_name, String product_description, int price,
-			int store_id, int category_id,int brand_id, float ratings, int no_of_ratings) {
-		super();
-		this.product_id = product_id;
-		this.product_img_url = product_img_url;
-		this.product_name = product_name;
-		this.product_description = product_description;
-		this.price = price;
-		this.store_id = store_id;
-		this.category_id = category_id;
-		this.brand_id = brand_id;
-		this.ratings = ratings;
-		this.no_of_ratings = no_of_ratings;
-	}
-	public Product() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	@Override
-	public String toString() {
-		return "Product [product_id=" + product_id + ", product_img_url=" + product_img_url + ", product_name="
-				+ product_name + ", product_description=" + product_description + ", price=" + price + ", store_id="
-				+ store_id + ", category_id=" + category_id + ", brand_id=" + brand_id + ", ratings=" + ratings
-				+ ", no_of_ratings=" + no_of_ratings + "]";
-	}
+	
 	
 	
 	

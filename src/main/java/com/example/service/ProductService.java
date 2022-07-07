@@ -24,4 +24,9 @@ public class ProductService {
 		List<Product> products = productRepo.getproductByCatId(categoryId);
 		return products;
 	}
+	
+	public List<Product> getProductsbyBrandId(String brandId){
+		List<Product> products = productRepo.getproductByBraId(brandId);
+		return products;
+	}
 }

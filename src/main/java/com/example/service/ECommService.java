@@ -2,7 +2,7 @@ package com.example.service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -76,6 +76,19 @@ public class ECommService {
 
 	public int getWalletBalance(int userId) {
 		return eCommRepo.getWalletBalance(userId);
+	}
+
+
+	public int reduceWalletBalance(int userId, int amount) {
+		
+		Optional<User> user = eCommRepo.findById(userId);
+		int reducedAmount = user.get().getWallet() - amount;
+		if(reducedAmount <= 0) {
+			return -1;
+		}
+		user.get().setWallet(reducedAmount);
+		eCommRepo.save(user.get());
+		return reducedAmount;
 	}
 
 }

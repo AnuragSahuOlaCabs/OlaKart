@@ -23,12 +23,12 @@ public class ProductController {
 	public List<Product> getAllProducts(){
 		return productService.getAllProducts();
 	}
-	@PostMapping("/getproducybycat")
+	@PostMapping("/getproductbycat")
 	public List<Product> getProductsByCategory(@RequestBody Category category){
 		String category_id = String.valueOf(category.getCategory_id());
 		return productService.getProductsbyCategoryId(category_id);
 	}
-	@PostMapping("/getproducybybrand")
+	@PostMapping("/getproductbybrand")
 	public List<Product> getProductsByBrand(@RequestBody Brand brand){
 		String brand_id = String.valueOf(brand.getBrand_id());
 		return productService.getProductsbyBrandId(brand_id);

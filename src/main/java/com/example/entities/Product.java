@@ -13,7 +13,6 @@ public class Product {
 	private int price;
 	private int store_id;
 	private int category_id;
-	private int sub_category_id;
 	private int brand_id;
 	private float ratings;
 	private int no_of_ratings;
@@ -59,12 +58,7 @@ public class Product {
 	public void setCategory_id(int category_id) {
 		this.category_id = category_id;
 	}
-	public int getSub_category_id() {
-		return sub_category_id;
-	}
-	public void setSub_category_id(int sub_category_id) {
-		this.sub_category_id = sub_category_id;
-	}
+	
 	public int getBrand_id() {
 		return brand_id;
 	}
@@ -83,21 +77,9 @@ public class Product {
 	public void setNo_of_ratings(int no_of_ratings) {
 		this.no_of_ratings = no_of_ratings;
 	}
-	@Override
-	public String toString() {
-		return "Product [product_id=" + product_id + ", product_img_url=" + product_img_url + ", product_name="
-				+ product_name + ", product_description=" + product_description + ", price=" + price + ", store_id="
-				+ store_id + ", category_id=" + category_id + ", sub_category_id=" + sub_category_id + ", brand_id="
-				+ brand_id + ", ratings=" + ratings + ", no_of_ratings=" + no_of_ratings + ", getProduct_id()="
-				+ getProduct_id() + ", getProduct_img_url()=" + getProduct_img_url() + ", getProduct_name()="
-				+ getProduct_name() + ", getProduct_description()=" + getProduct_description() + ", getPrice()="
-				+ getPrice() + ", getStore_id()=" + getStore_id() + ", getCategory_id()=" + getCategory_id()
-				+ ", getSub_category_id()=" + getSub_category_id() + ", getBrand_id()=" + getBrand_id()
-				+ ", getRatings()=" + getRatings() + ", getNo_of_ratings()=" + getNo_of_ratings() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
-	}
+	
 	public Product(int product_id, String product_img_url, String product_name, String product_description, int price,
-			int store_id, int category_id, int sub_category_id, int brand_id, float ratings, int no_of_ratings) {
+			int store_id, int category_id,int brand_id, float ratings, int no_of_ratings) {
 		super();
 		this.product_id = product_id;
 		this.product_img_url = product_img_url;
@@ -106,7 +88,6 @@ public class Product {
 		this.price = price;
 		this.store_id = store_id;
 		this.category_id = category_id;
-		this.sub_category_id = sub_category_id;
 		this.brand_id = brand_id;
 		this.ratings = ratings;
 		this.no_of_ratings = no_of_ratings;
@@ -114,6 +95,13 @@ public class Product {
 	public Product() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Product [product_id=" + product_id + ", product_img_url=" + product_img_url + ", product_name="
+				+ product_name + ", product_description=" + product_description + ", price=" + price + ", store_id="
+				+ store_id + ", category_id=" + category_id + ", brand_id=" + brand_id + ", ratings=" + ratings
+				+ ", no_of_ratings=" + no_of_ratings + "]";
 	}
 	
 	

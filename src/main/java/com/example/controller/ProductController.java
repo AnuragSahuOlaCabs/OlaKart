@@ -33,4 +33,8 @@ public class ProductController {
 		String brand_id = String.valueOf(brand.getBrand_id());
 		return productService.getProductsbyBrandId(brand_id);
 	}
+	@GetMapping("/getrandomproducts")
+	public List<Product> getRandomProducts(){
+		return productService.getRandomProducts();
+	}
 }

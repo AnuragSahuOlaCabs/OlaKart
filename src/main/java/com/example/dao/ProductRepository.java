@@ -18,6 +18,9 @@ public interface ProductRepository extends CrudRepository<Product, Integer>{
 	@Query(value = "select * from product where brand_id = :braId", nativeQuery=true)
 	public List<Product> getproductByBraId(String braId);
 	
+	@Query(value = "select * from product order by rand() limit 4", nativeQuery=true)
+	public List<Product> getrandomproducts();
+	
 //	@Query(value = "select count(user_id) from Cart where user_id = :ud", nativeQuery = true)
 //	public int getCount(String ud);
 }

@@ -29,4 +29,10 @@ public class ProductService {
 		List<Product> products = productRepo.getproductByBraId(brandId);
 		return products;
 	}
+	
+	public List<Product> getRandomProducts(){
+//		List<Product> products = new ArrayList<Product>();
+		return productRepo.getrandomproducts();
+//		return products;
+	}
 }

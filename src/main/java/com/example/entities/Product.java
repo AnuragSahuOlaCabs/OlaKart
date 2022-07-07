@@ -5,9 +5,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Product {
-	
 	@Id
-	
 	private int product_id;
 	private String product_name;
 	private String product_description;

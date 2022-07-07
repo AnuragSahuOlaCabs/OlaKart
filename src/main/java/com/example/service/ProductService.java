@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.dao.ProductRepository;
 import com.example.entities.Product;
 
-
+@Service
 public class ProductService {
 	
 	@Autowired
@@ -19,4 +20,8 @@ public class ProductService {
 		return products;
 	}
 
+	public List<Product> getProductsbyCategoryId(String categoryId){
+		List<Product> products = productRepo.getproductByCatId(categoryId);
+		return products;
+	}
 }

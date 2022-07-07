@@ -90,5 +90,15 @@ public class ECommService {
 		eCommRepo.save(user.get());
 		return reducedAmount;
 	}
+	
+	public int addWalletBalance(int userId, int amount) {
+		
+		Optional<User> user = eCommRepo.findById(userId);
+		int increaredAmount = user.get().getWallet() + amount;
+		user.get().setWallet(increaredAmount);
+		eCommRepo.save(user.get());
+		return increaredAmount;
+	}
 
+	
 }

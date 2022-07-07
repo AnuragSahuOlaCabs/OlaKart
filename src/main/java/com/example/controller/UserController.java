@@ -40,10 +40,14 @@ public class UserController {
 		return eCommService.getWalletBalance(id);
 	}
 	
-	
 	@PostMapping("/reducewalletbalance")
 	public int reduceWalBalanace(@RequestBody ModifyBalance modifybalanace) throws Exception {
 		return eCommService.reduceWalletBalance(modifybalanace.getUser_id(), modifybalanace.getAmount());
+	}
+	
+	@PostMapping("/addamount")
+	public int addWalBalanace(@RequestBody ModifyBalance modifybalanace) throws Exception {
+		return eCommService.addWalletBalance(modifybalanace.getUser_id(), modifybalanace.getAmount());
 	}
 		
 	// Seller Registration

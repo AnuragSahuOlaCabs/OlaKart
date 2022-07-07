@@ -24,5 +24,6 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 	@Query(value = "update user set wallet = wallet-:amount where user_id = :id", nativeQuery = true)
 	public void reduceWalletBalance(int id, int amount);
 	
-	
+	@Query(value = "update user set wallet = wallet+:amount where user_id = :id", nativeQuery = true)
+	public void addWalletBalance(int id, int amount);
 }

@@ -1,0 +1,26 @@
+.column-phone{
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    /* border: 2px solid rgb(67, 42, 181); */
+    max-width: 33%;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.col-ph{
+    display: flex;
+    flex-direction: row;
+}
+.card-text{
+    padding-right: 20px;
+    margin: 10px;
+}
+.img-fluid rounded-start{
+    padding-top: 20px;
+}
+ 
+.rol-phone{
+    display: flex;
+    flex-direction: column;
+}
+ 

@@ -17,13 +17,14 @@
     /* every button uses 20% of the page width */
 }
 
+
 .bt:hover{
     background-color: rgb(252, 133, 234);
     color: black;
 
-    box-shadow: 10px 10px 10px;
+    box-shadow: 7px 7px 7px;
 
-    transform: translate(0px, -10px);
+    transform: translate(0px, -5px);
     
 }
 .btk{

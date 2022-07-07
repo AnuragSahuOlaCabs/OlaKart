@@ -15,14 +15,14 @@ public class UserService {
 
 	
 	static {
-		list.add(new User(1, "Anurag", "anurag.sahu@olacabs.com", "here", "8602043478", "male", "Koramangala"));
-		list.add(new User(2, "Abhishek", "Abhishek.sahu@olacabs.com", "here", "8602043478", "male", "Koramangala"));
-		list.add(new User(3, "Akash", "Akash.sahu@olacabs.com", "here", "8602043478", "male", "Koramangala"));
+//		list.add(new User(1, "Anurag", "anurag.sahu@olacabs.com", "here", "8602043478", "male", "Koramangala"));
+//		list.add(new User(2, "Abhishek", "Abhishek.sahu@olacabs.com", "here", "8602043478", "male", "Koramangala"));
+//		list.add(new User(3, "Akash", "Akash.sahu@olacabs.com", "here", "8602043478", "male", "Koramangala"));
 	}
 	
 	static {
-		listSeller.add(new Seller(123, "taraFancyStore1@gmail.com", "Tara Fancy Store", "Tara", "12345","9530767450","1-p-6 Banglore"));
-		listSeller.add(new Seller(43, "foodAdda@gmail.com", "Food Adda", "Rajesh", "12345","9530767456","1-p-7 Banglore"));
+//		listSeller.add(new Seller(123, "taraFancyStore1@gmail.com", "Tara Fancy Store", "Tara", "12345","9530767450","1-p-6 Banglore"));
+//		listSeller.add(new Seller(43, "foodAdda@gmail.com", "Food Adda", "Rajesh", "12345","9530767456","1-p-7 Banglore"));
 	}
 	
 	public List<User> getAllUsers(){

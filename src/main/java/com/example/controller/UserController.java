@@ -34,6 +34,10 @@ public class UserController {
 	public List<User> checkLogin(@RequestBody LoginCredentials loginCre) throws Exception {
 		return this.eCommService.chkCustomer(loginCre);	
 	}
+	@GetMapping("/getwalletbalance/{id}")
+	public int getWalBalanace(@PathVariable("id") int id) throws Exception {
+		return eCommService.getWalletBalance(id);
+	}
 		
 	// Seller Registration
 //	@GetMapping("/sellers")

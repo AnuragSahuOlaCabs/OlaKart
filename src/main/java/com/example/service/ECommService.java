@@ -73,4 +73,9 @@ public class ECommService {
 	public void update(User user, int userId) {
 		eCommRepo.save(user);
 	}
+
+	public int getWalletBalance(int userId) {
+		return eCommRepo.getWalletBalance(userId);
+	}
+
 }

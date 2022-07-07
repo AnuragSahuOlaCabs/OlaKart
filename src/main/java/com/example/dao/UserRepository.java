@@ -12,7 +12,10 @@ import com.example.entities.User;
 public interface UserRepository extends CrudRepository<User, Integer> {
 	
 	
-	@Query(value = "select * from User;", nativeQuery = true)
+	@Query(value = "select wallet from user where user_id = :id", nativeQuery = true)
+	public int getWalletBalance(int id);
+
+	@Query(value = "select * from user;", nativeQuery = true)
 	public List<User> getUsers();
 	
 	

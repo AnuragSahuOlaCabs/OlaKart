@@ -38,6 +38,15 @@ public class CartController {
 		return list_of_product;
 		
 	}
+	
+	@PostMapping("/addtocart")
+	public Cart addToCart(@RequestBody Cart cart) throws Exception {
+		return cartService.AddToCart(cart);
+	}
+	@PostMapping("/removefromcart")
+	public void removeFromCart(@RequestBody Cart cart) throws Exception {
+		cartService.removeFromCart(cart);
+	}
 //	@DeleteMapping("/checkoutcart/{user_id}")
 //	public void checkoutCart(@PathVariable("user_id") int user_id) throws Exception{
 //		cartService.checkoutCart(user_id);

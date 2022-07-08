@@ -42,6 +42,15 @@ public class CartService {
 //		return prod_details;
 	}
 	
+	public Cart AddToCart(Cart cart) {
+		cartRepo.save(cart);
+		return cart;
+	}
+
+	public void removeFromCart(Cart cart) {
+		cartRepo.delete(cart);
+	}
+	
 //	public void checkoutCart(int user_id) {
 //		cartRepo.checkoutCart(user_id);
 //	}

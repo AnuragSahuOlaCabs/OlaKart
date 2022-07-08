@@ -38,7 +38,7 @@ public class ProductService {
 	}
 	
 	public Product getProductById(int pid){
-		return productRepo.getProductById(pid).get(0);
+		return productRepo.getProductById(pid);
 	}
 //	public List<Product> getProductsInCart(int id) {
 //		List<Integer> prod_ids = cartRepo.getProductsInCart(id);
@@ -49,4 +49,18 @@ public class ProductService {
 //		}
 //		return prod_details;
 //		}
+
+//	public Product getProduct(int prod_id) {
+//		return productRepo.getProductBySeller(prod_id);
+//	}
+
+	public List<Product> getAllProducts(int store_id) {
+		return productRepo.getAllProducts(store_id);
+	}
+
+	public Product addProducts(Product product) {
+		return productRepo.save(product);
+	}
+
+	
 }

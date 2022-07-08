@@ -22,7 +22,10 @@ public interface ProductRepository extends CrudRepository<Product, Integer>{
 	public List<Product> getrandomproducts();
 	
 	@Query(value = "select * from product where product_id = :p_id", nativeQuery=true)
-	public List<Product> getProductById(int p_id);
+	public Product getProductById(int p_id);
+	
+	@Query(value = "select * from product where store_id = :store_id", nativeQuery=true)
+	public List<Product> getAllProducts(int store_id);
 	
 	
 //	@Query(value = "select * from product where product_id = :proId", nativeQuery=true)

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import com.example.entities.Product;
 
-
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Integer>{
 
@@ -26,11 +25,4 @@ public interface ProductRepository extends CrudRepository<Product, Integer>{
 	
 	@Query(value = "select * from product where store_id = :store_id", nativeQuery=true)
 	public List<Product> getAllProducts(int store_id);
-	
-	
-//	@Query(value = "select * from product where product_id = :proId", nativeQuery=true)
-//	public List<Product> getrandomproducts(proId);
-	
-//	@Query(value = "select count(user_id) from Cart where user_id = :ud", nativeQuery = true)
-//	public int getCount(String ud);
 }

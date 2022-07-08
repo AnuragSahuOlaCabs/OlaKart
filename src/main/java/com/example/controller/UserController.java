@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entities.*;
@@ -20,59 +19,53 @@ public class UserController {
 	@Autowired
 	private ECommService eCommService;
 	
+//	API to get all users
+	
 	@GetMapping("/users")
 	public List<User> getUsers(){
 		return eCommService.getAllUsers();
 	}
-	@GetMapping("/users/{id}")
-	public User getBookbyId(@PathVariable("id") int id) throws Exception {
-		return eCommService.getUserById(id);
+
+//	API to get details of a particular user
+	
+	@GetMapping("/users/{user_id}")
+	public User getBookbyId(@PathVariable("user_id") int user_id) throws Exception {
+		return eCommService.getUserById(user_id);
 	}
+
+//	API to register a user
+	
 	@PostMapping("/registeruser")
 	public User addBook(@RequestBody User user) throws Exception {
 		User u = this.eCommService.saveOrUpdate(user);
 		return u;
 	}
+	
+//  API to login by the user
+	
 	@PostMapping("/login_user")
 	public List<User> checkLogin(@RequestBody LoginCredentials loginCre) throws Exception {
 		return this.eCommService.chkCustomer(loginCre);	
 	}
-	@GetMapping("/getwalletbalance/{id}")
-	public int getWalBalanace(@PathVariable("id") int id) throws Exception {
-		return eCommService.getWalletBalance(id);
+	
+//	API to get the wallet balance of a user
+	
+	@GetMapping("/getwalletbalance/{user_id}")
+	public int getWalBalanace(@PathVariable("user_id") int user_id) throws Exception {
+		return eCommService.getWalletBalance(user_id);
 	}
+	
+//	API to modify the wallet balance after a purchase
 	
 	@PostMapping("/reducewalletbalance")
 	public int reduceWalBalanace(@RequestBody ModifyBalance modifybalanace) throws Exception {
 		return eCommService.reduceWalletBalance(modifybalanace.getUser_id(), modifybalanace.getAmount());
 	}
 	
+//	API to add money to wallet
+	
 	@PostMapping("/addToWallet")
 	public int addWalBalanace(@RequestBody ModifyBalance modifybalanace) throws Exception {
 		return eCommService.addWalletBalance(modifybalanace.getUser_id(), modifybalanace.getAmount());
 	}
-	
-		
-	// Seller Registration
-//	@GetMapping("/sellers")
-//	public List<Seller> getSeller(){
-//		return eCommService.getAllSeller();
-//	}
-//	@PostMapping("/registerseller")
-//	public Seller addSeller(@RequestBody Seller seller) throws Exception {
-//		Seller u = this.userService.putSeller(seller);
-//		return u;
-//	}
-//	
-//	//Seller Login
-//	@PostMapping("/loginseller")
-//	public List<Seller> checkLoginSeler(@RequestBody LoginCredentials loginCre) throws Exception {
-//		return this.userService.chkSeller(loginCre);	
-//	}
-//	// count the number of objects in cart
-//	@PostMapping("/count_of_cart")
-//	public CountCart getNumberOfObjectsInCart(@RequestBody User user) throws Exception {
-//		return this.userService.getObjectsInCartCount(user);
-//	}
-	
 }

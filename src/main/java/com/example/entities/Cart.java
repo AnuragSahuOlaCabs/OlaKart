@@ -8,20 +8,20 @@ public class Cart {
 	@Id
 	private int user_id;
 	private int product_id;
-	private String numberOfProducts;
+	private int number_of_products;
 	
-	public Cart(int user_id, int product_id, String numberOfProducts) {
+	public Cart(int user_id, int product_id, int number_of_products) {
 		super();
 		this.user_id = user_id;
 		this.product_id = product_id;
-		this.numberOfProducts = numberOfProducts;
+		this.number_of_products = number_of_products;
 	}
 	
 	public Cart() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public int getUser_id() {
 		return user_id;
 	}
@@ -34,21 +34,19 @@ public class Cart {
 	public void setProduct_id(int product_id) {
 		this.product_id = product_id;
 	}
-	public String getNumberOfProducts() {
-		return numberOfProducts;
+	public int getNumber_of_products() {
+		return number_of_products;
 	}
-	public void setNumberOfProducts(String numberOfProducts) {
-		this.numberOfProducts = numberOfProducts;
+	public void setNumber_of_products(int number_of_products) {
+		this.number_of_products = number_of_products;
 	}
 	
 	@Override
 	public String toString() {
-		return "Cart [user_id=" + user_id + ", product_id=" + product_id + ", numberOfProducts=" + numberOfProducts
-				+ ", getUser_id()=" + getUser_id() + ", getProduct_id()=" + getProduct_id() + ", getNumberOfProducts()="
-				+ getNumberOfProducts() + ", hashCode()=" + hashCode() + ", getClass()=" + getClass() + ", toString()="
-				+ super.toString() + "]";
+		return "Cart [user_id=" + user_id + ", product_id=" + product_id + ", number_of_products=" + number_of_products
+				+ ", getUser_id()=" + getUser_id() + ", getProduct_id()=" + getProduct_id()
+				+ ", getNumber_of_products()=" + getNumber_of_products() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
-	
-	
-
 }
+	

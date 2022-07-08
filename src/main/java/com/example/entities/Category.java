@@ -10,18 +10,17 @@ public class Category {
 	private String category_name;
 	private int category_id;
 	
-	
-	
-	
 	public Category() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public Category(String category_name, int category_id) {
 		super();
 		this.category_name = category_name;
 		this.category_id = category_id;
 	}
+	
 	public String getCategory_name() {
 		return category_name;
 	}
@@ -34,12 +33,9 @@ public class Category {
 	public void setCategory_id(int category_id) {
 		this.category_id = category_id;
 	}
+	
 	@Override
 	public String toString() {
 		return "Category [category_name=" + category_name + ", category_id=" + category_id + "]";
 	}
-	
-	
-	
-
 }

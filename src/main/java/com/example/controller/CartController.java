@@ -22,34 +22,44 @@ public class CartController {
 	@Autowired
 	private ProductService prodService;
 	
+//  API to get the number of products in the cart of the user
+	
 	@GetMapping("/count_of_cart/{user_id}")
 	public int getCount(@PathVariable("user_id") String user_id) throws Exception{
 		return cartService.getCartCount(user_id);
 	}
 	
-	@GetMapping("/getproductsincart/{id}")
-	public List<Product> getProductsInCart(@PathVariable("id") int id) throws Exception {
-//		System.out.println("HEre");
-		List<Integer> list_of_product_ids = cartService.getProductsInCart(id);
+//  API to get the products	in the cart of the user
+	
+	@GetMapping("/getproductsincart/{user_id}")
+	public List<Product> getProductsInCart(@PathVariable("user_id") int user_id) throws Exception {
+		List<Integer> list_of_product_ids = cartService.getProductsInCart(user_id);
 		List<Product> list_of_product = new ArrayList<Product>();
 		for(int i : list_of_product_ids) {
 			list_of_product.add(prodService.getProductById(i));
 		}
-		return list_of_product;
-		
+		return list_of_product;	
 	}
+
+//	API to add a product in the cart of the user
 	
 	@PostMapping("/addtocart")
 	public Cart addToCart(@RequestBody Cart cart) throws Exception {
 		return cartService.AddToCart(cart);
 	}
+
+//	API to remove a product in the cart of the user
+	
 	@PostMapping("/removefromcart")
 	public void removeFromCart(@RequestBody Cart cart) throws Exception {
 		cartService.removeFromCart(cart);
 	}
-//	@DeleteMapping("/checkoutcart/{user_id}")
-//	public void checkoutCart(@PathVariable("user_id") int user_id) throws Exception{
-//		cartService.checkoutCart(user_id);
-//	}
+	
+//	API to remove all products in the cart after checkout by the user
+	
+	@GetMapping("/checkoutcart/{user_id}")
+	public void checkoutCart(@PathVariable("user_id") int user_id) throws Exception{
+		cartService.getCartObjects(user_id);
+	}
 
 }

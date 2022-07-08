@@ -13,6 +13,7 @@ import com.example.dao.UserRepository;
 public class ECommService {
 	@Autowired
 	UserRepository eCommRepo;
+	
 	public List<User> getAllUsers(){
 		List<User> users = new ArrayList<User>();
 		eCommRepo.findAll().forEach(user -> users.add(user));
@@ -24,7 +25,6 @@ public class ECommService {
 	}
 	
 	public User saveOrUpdate(User user) {
-	
 		// Encrypt Password
 		String pepper = "12345678";
 		
@@ -61,7 +61,6 @@ public class ECommService {
 		eCommRepo.findAll().forEach(user1 -> list.add(user1));
 		for (User i : list) {
 			// Check for Passwords also
-			
             if(i.getEmail_id().equals(loginChk.getEmail_id()) &&
             		i.getPassword_en().equals(encryptedPassword)) {
             	users.add(i);
@@ -78,9 +77,7 @@ public class ECommService {
 		return eCommRepo.getWalletBalance(userId);
 	}
 
-
 	public int reduceWalletBalance(int userId, int amount) {
-		
 		Optional<User> user = eCommRepo.findById(userId);
 		int reducedAmount = user.get().getWallet() - amount;
 		if(reducedAmount <= 0) {
@@ -92,14 +89,10 @@ public class ECommService {
 	}
 	
 	public int addWalletBalance(int userId, int amount) {
-		
 		Optional<User> user = eCommRepo.findById(userId);
 		int increaredAmount = user.get().getWallet() + amount;
 		user.get().setWallet(increaredAmount);
 		eCommRepo.save(user.get());
 		return increaredAmount;
 	}
-
-
-	
 }

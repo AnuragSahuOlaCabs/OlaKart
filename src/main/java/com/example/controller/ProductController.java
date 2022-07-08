@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.entities.Brand;
 import com.example.entities.Category;
 import com.example.entities.Product;
-import com.example.entities.Seller;
 import com.example.service.ProductService;
 
 @CrossOrigin
@@ -21,22 +20,27 @@ public class ProductController {
 	
 	@Autowired
 	private ProductService productService;
+	
+//	API to get list of all products
+	
 	@GetMapping("/products")
 	public List<Product> getAllProducts(){
 		return productService.getAllProducts();
 	}
+	
+//	API to get list of all products from a particular category
+	
 	@PostMapping("/getproductbycat")
 	public List<Product> getProductsByCategory(@RequestBody Category category){
 		String category_id = String.valueOf(category.getCategory_id());
 		return productService.getProductsbyCategoryId(category_id);
 	}
+	
+//	API to get list of all products from a particular brand
+	
 	@PostMapping("/getproductbybrand")
 	public List<Product> getProductsByBrand(@RequestBody Brand brand){
 		String brand_id = String.valueOf(brand.getBrand_id());
 		return productService.getProductsbyBrandId(brand_id);
 	}
-//	@GetMapping("/getrandomproducts")
-//	public List<Product> getRandomProducts(){
-//		return productService.getRandomProducts();
-//	}
 }

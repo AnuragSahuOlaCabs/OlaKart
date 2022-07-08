@@ -11,7 +11,6 @@ import com.example.entities.User;
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
 	
-	
 	@Query(value = "select wallet from user where user_id = :id", nativeQuery = true)
 	public int getWalletBalance(int id);
 

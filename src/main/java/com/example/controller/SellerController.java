@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.entities.LoginCredentials;
 import com.example.entities.Product;
 import com.example.entities.Seller;
-import com.example.entities.User;
 import com.example.service.ProductService;
 import com.example.service.SellerService;
 
@@ -26,21 +25,28 @@ public class SellerController {
 	@Autowired
 	private ProductService prodService;
 	
+//	API to get list of all sellers
 	
 	@GetMapping("/sellers")
 	public List<Seller> getAllSellers(){
 		return sellerService.getAllSellers();
 	}
 	
-	@GetMapping("/sellers/{id}")
-	public Seller getSellerbyId(@PathVariable("id") int id) throws Exception {
-		return sellerService.getSellerById(id);
+//	API to get seller details using store id
+	
+	@GetMapping("/sellers/{store_id}")
+	public Seller getSellerbyId(@PathVariable("store_id") int store_id) throws Exception {
+		return sellerService.getSellerById(store_id);
 	}
+	
+//	API to login seller
 	
 	@PostMapping("/login_seller")
 	public List<Seller> chkSeller(@RequestBody LoginCredentials loginCre) throws Exception {
 		return this.sellerService.chkSeller(loginCre);	
 	}
+	
+//	API to register a new seller
 	
 	@PostMapping("/register_seller")
 	public Seller addSeller(@RequestBody Seller seller) throws Exception {
@@ -48,20 +54,31 @@ public class SellerController {
 		return s;
 	}
 	
+//  API to get product of a seller using the productId
+	
 	@GetMapping("/getproduct/{prod_id}")
 	public Product getProduct(@PathVariable("prod_id") int prod_id) throws Exception {
 		return prodService.getProductById(prod_id);
 	}
 	
-	@GetMapping("/getallproducts/{store_id}")
+//  API to get products of a store
+	
+	@GetMapping("/getallproductsbyseller/{store_id}")
 	public List<Product> getAllProducts(@PathVariable("store_id") int store_id) throws Exception {
 		return prodService.getAllProducts(store_id);
 	}
+
+//  API to add product to the store 
+	
 	@PostMapping("/addproduct")
 	public Product addProduct(@RequestBody Product product) throws Exception {
 		return prodService.addProducts(product);
 	}
-	
-	
 
+//  API to remove product from the store of the seller
+	
+	@GetMapping("/removeproductbyseller/{prod_id}")
+	public void removeProductBySeller(@PathVariable("prod_id") int prod_id) throws Exception {
+		prodService.removeProductBySeller(prod_id);
+	}
 }

@@ -15,6 +15,8 @@ public class CartService {
 	@Autowired
 	CartRepository cartRepo;
 	ProductRepository prodRepo;
+//	NewCartRepository NewCRepo;
+	
 	public int getCartCount(String ud){
 		List<Cart> carts = new ArrayList<Cart>();
 //		cartRepo.findAll().forEach(cart.getUser_id() -> carts.add(cart));
@@ -40,4 +42,7 @@ public class CartService {
 //		return prod_details;
 	}
 	
+//	public void checkoutCart(int user_id) {
+//		cartRepo.checkoutCart(user_id);
+//	}
 }

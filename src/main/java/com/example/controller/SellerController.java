@@ -40,5 +40,6 @@ public class SellerController {
 		Seller s = this.sellerService.saveOrUpdate(seller);
 		return s;
 	}
+	
 
 }

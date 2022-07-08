@@ -38,5 +38,9 @@ public class CartController {
 		return list_of_product;
 		
 	}
+//	@DeleteMapping("/checkoutcart/{user_id}")
+//	public void checkoutCart(@PathVariable("user_id") int user_id) throws Exception{
+//		cartService.checkoutCart(user_id);
+//	}
 
 }
